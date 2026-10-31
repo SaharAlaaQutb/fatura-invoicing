@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #4F46E5;
+    --color-primary-hover: #4338CA;
+    --color-bg: #F9FAFB;
+    --color-surface: #FFFFFF;
+    --color-text: #111827;
+    --color-muted: #6B7280;
+    --color-border: #E5E7EB;
+    --status-draft: #6B7280;
+    --status-issued: #2563EB;
+    --status-paid: #16A34A;
+    --status-overdue: #DC2626;
+    --status-void: #9CA3AF;
+    --radius: 8px;
+    --font-sans: "IBM Plex Sans Arabic", Inter, system-ui, sans-serif;
+    --font-mono: "IBM Plex Mono", monospace;
+  }
+
+  [dir="rtl"] {
+    /* RTL-specific overrides handled via logical properties in components */
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
