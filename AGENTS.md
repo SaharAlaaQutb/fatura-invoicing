@@ -21,8 +21,10 @@ Do not invent test/lint/build/typecheck commands — none are executable until t
 - Stick to the two plans in `local-docs/`: `IMPLEMENTATION_PLAN.md` and `03-fatura-invoicing-inventory.md`. They are the source of truth; do not implement from memory or invent scope.
 - Always apply SOLID principles and design patterns when implementing.
 - Always keep code clean and well documented.
+- For every subtask: write a **code proposal** first (what will be created/changed, why, and how to verify), wait for user approval, then implement.
 - Always checkout a new branch for each new feature before starting work.
 - Never commit or push unless CI/CD tests are fully passing. (No CI/CD exists yet in the scaffold stage; this rule applies once pipelines land.)
+- Use conventional commits (`feat:`, `fix:`, `docs:`, `chore:`, etc.) with a brief description in every commit.
 
 ## What to do before making changes
 
