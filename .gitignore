@@ -1,0 +1,14 @@
+# Local-only planning and specification documents
+local-docs/
+
+# Local agent instruction file
+AGENTS.md
+
+# Editor and OS files
+.idea/
+.DS_Store
+
+# Environment secrets
+.env
+.env.*
+!.env.example
