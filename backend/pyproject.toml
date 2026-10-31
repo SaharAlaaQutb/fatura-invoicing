@@ -1,0 +1,55 @@
+[project]
+name = "fatura-backend"
+version = "0.1.0"
+description = "Fatura invoicing backend (Django 5, DRF, Celery)"
+requires-python = ">=3.12"
+dependencies = [
+    "Django>=5.0,<6.0",
+    "djangorestframework>=3.15,<4.0",
+    "djangorestframework-simplejwt>=5.0,<6.0",
+    "django-environ>=0.10,<1.0",
+    "psycopg2-binary>=2.9,<3.0",
+    "celery[redis]>=5.3,<6.0",
+    "weasyprint>=6.1,<7.0",
+    "drf-spectacular>=0.27,<1.0",
+    "django-filter>=23,<24",
+    "gunicorn>=21.0,<22.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.2,<1.0",
+    "mypy>=1.8,<2.0",
+    "pytest>=8.0,<9.0",
+    "pytest-django>=4.7,<5.0",
+    "factory-boy>=3.2,<4.0",
+    "freezegun>=1.2,<2.0",
+]
+
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501"]
+
+[tool.ruff.isort]
+known-first-party = ["fatura", "config"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = True
+warn_return_any = True
+warn_unused_ignores = True
+disallow_untyped_defs = True
+disallow_any_generics = True
+
+[tool.pytest.ini_options]
+django_find_project = false
+DJANGO_SETTINGS_MODULE = "config.settings.test"
+python_files = ["test_*.py", "*_test.py"]
+testpaths = ["tests"]
+addopts = "-q"

@@ -12,3 +12,9 @@ AGENTS.md
 .env
 .env.*
 !.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+.db.sqlite3
